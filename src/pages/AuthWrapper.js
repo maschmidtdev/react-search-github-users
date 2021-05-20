@@ -16,7 +16,7 @@ function AuthWrapper({ children }) {
         );
     }
     if (error) {
-        console.log('error', error.msg);
+        console.log('error', error);
         return (
             <Wrapper>
                 <h1>{error.msg}</h1>

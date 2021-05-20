@@ -5,7 +5,10 @@ import styled from 'styled-components';
 
 function AuthWrapper({ children }) {
     const { isLoading, error } = useAuth0();
+    console.log('before loading');
+
     if (isLoading) {
+        console.log('is loading');
         return (
             <Wrapper>
                 <img src={loadingGif} alt='spinner' />
@@ -13,6 +16,7 @@ function AuthWrapper({ children }) {
         );
     }
     if (error) {
+        console.log('error');
         return (
             <Wrapper>
                 <h1>{error.msg}</h1>
@@ -20,6 +24,7 @@ function AuthWrapper({ children }) {
         );
     }
 
+    console.log('before children');
     return <>{children}</>;
 }
 
